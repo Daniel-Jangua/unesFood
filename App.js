@@ -62,8 +62,18 @@ export default function App() {
           options={{
             title: 'Login: Cliente'
         }}/>
-        <Stack.Screen name="CadVend" component={CadVend} />
-        <Stack.Screen name="CadCli" component={CadCli} />
+        <Stack.Screen name="CadVend" 
+          component={CadVend}
+          options={{
+           title: 'Cadastro: Vendedor'
+      }}
+         />
+        <Stack.Screen name="CadCli"
+          component={CadCli}
+          options={{
+           title: 'Cadastro: Cliente'
+      }}
+          />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
