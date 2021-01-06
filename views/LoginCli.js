@@ -25,7 +25,8 @@ export default function LoginCli(props){
 
                 <TouchableOpacity
                     style={css.botao}
-                    onPress={()=>{Alert.alert('Fazendo Login')}}
+                   // onPress={()=>{Alert.alert('Fazendo Login')}}
+                   onPress={()=>props.navigation.navigate('Inicio')}
                 >
                     <Text style={css.textoBotao}>Entrar</Text>
                 </TouchableOpacity>

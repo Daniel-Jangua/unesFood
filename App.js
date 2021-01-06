@@ -5,7 +5,7 @@ import Page from './views/Page';
 import {css} from './assets/css/Css';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Home, LoginCli, LoginVend, CadCli, CadVend} from './views';
+import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio} from './views';
 
 export default function App() {
 
@@ -73,7 +73,17 @@ export default function App() {
           options={{
            title: 'Cadastro: Cliente'
       }}
-          />
+        />
+        <Stack.Screen name="Inicio" 
+          component={Inicio} 
+          options={{
+            title: 'Inicio'
+        }}/>
+        <Stack.Screen name="Pesquisa" 
+          component={Pesquisa} 
+          options={{
+            title: 'Pesquisa'
+        }}/>
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
