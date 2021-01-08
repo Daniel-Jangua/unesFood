@@ -73,6 +73,79 @@ const css = StyleSheet.create({
         borderBottomWidth: 2,
         borderBottomColor: '#CFEFFF',
         padding: 20
+    },
+    container2: {
+        flex: 1,
+        alignContent:'flex-start',
+        
+    },
+    container_fora: {
+        //  flex: 1,
+        backgroundColor: '#fff',
+        marginBottom:10
+        //alignContent:'flex-start',
+        
+    },
+    scrollView: {
+        backgroundColor: '#CFEFFF',
+        //marginHorizontal: 20,
+    },
+    
+    text: {
+        fontSize: 16,
+        marginLeft: 10
+        
+    },
+    text_produto: {
+        fontSize: 16,
+        fontWeight:'bold',
+        paddingLeft:10,        
+        paddingRight:100,        
+        //marginLeft: 10
+    },
+    text_qtd: {
+        fontSize: 16,
+        fontWeight:'bold',
+        paddingHorizontal:10,
+        //marginLeft: 10
+    },
+    text_valor: {
+        fontSize: 16,
+        fontWeight:'bold',
+        paddingLeft:10,        
+        paddingRight:30,
+        //marginLeft: 10
+    },
+    text_mais: {
+        fontSize: 16,
+        fontWeight:'bold',
+        paddingHorizontal:5,
+        //marginLeft: 10
+    },
+    text_menos: {
+        fontSize: 16,
+        fontWeight:'bold',
+        paddingHorizontal:5,
+        //marginLeft: 10
+    },
+    fora_scroll: {
+        fontSize: 16,
+        fontWeight:'bold',
+        marginLeft: 10,
+        marginBottom: 10,
+    },
+    menu:{
+        flexDirection:'row',
+        marginTop: 5,
+        marginLeft:5,
+        marginBottom:20,
+        backgroundColor:'#fff'
+    },
+    bota:{
+        width:300,
+        height:42,
+        // backgroundColor: '#66bbff',
+        borderRadius: 4,
     }
   });
 
