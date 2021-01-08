@@ -284,6 +284,29 @@ const css = StyleSheet.create({
         fontWeight:'bold',
         // paddingHorizontal:10,
         //marginLeft: 10
+    },
+    cardapioContainerMenu:{
+        flex:1,
+        flexDirection:'row'
+    },
+    cardapioContainerBotoes:{
+        flex: 1,
+        flexDirection:'row',
+        justifyContent:'space-evenly',
+        alignItems:'flex-end'
+    },
+    cardapioBotao:{
+        marginVertical: 20,
+        width:120,
+        height:60,
+        backgroundColor: '#66bbff',
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    cardapioContainerLista:{
+        flex: 2,
+        alignContent:'center',
     }
   });
 
