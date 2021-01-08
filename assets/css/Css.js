@@ -79,6 +79,12 @@ const css = StyleSheet.create({
         alignContent:'flex-start',
         
     },
+    container22: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#CFEFFF',
+        flexDirection: 'column'
+    },
     container_fora: {
         //  flex: 1,
         backgroundColor: '#fff',
@@ -95,6 +101,24 @@ const css = StyleSheet.create({
         fontSize: 16,
         marginLeft: 10
         
+    },
+    texto_perfil: {
+        fontSize: 18,
+        // padding:,
+        fontWeight:'bold',      
+        alignItems: "center",
+        
+        // backgroundColor: '#A9A9A9'
+        marginLeft: 30,
+        marginRight: 10
+    },
+    text_perf2: {
+        fontSize: 20,
+        // padding:,
+        fontWeight:'bold',
+        
+        // backgroundColor: '#A9A9A9'
+        marginLeft: 10
     },
     text_produto: {
         fontSize: 16,
@@ -154,6 +178,13 @@ const css = StyleSheet.create({
         backgroundColor: '#CFEFFF',
         flexDirection: 'row'
     },
+    container_item_lista:{
+        marginTop: 10,
+        paddingVertical: 20,
+        paddingHorizontal: 20,
+        backgroundColor: '#fff',
+        flexDirection: 'row'
+    },
     foto_item_lista:{
         width: 80,
         height: 80,
@@ -173,9 +204,50 @@ const css = StyleSheet.create({
         marginTop: 10,
         marginLeft:10
     },
+    icone_avaliacao2:{
+        width: 25,
+        height: 25,
+        //borderRadius: 100,
+        //marginTop: 10,
+        marginRight:5,
+        marginLeft: 20
+    },
     dados_item_lista:{
         paddingLeft: 10,
         color: 'green'
+    },
+    container_perfil: {
+        //flex: 1,
+        marginTop: 20,
+        marginHorizontal: 20,
+        //backgroundColor: '#fff',
+        alignItems: "center",
+        flexDirection: 'row'
+    },
+    perfil_foto: {
+        width: 100,
+        height: 100,
+        borderRadius: 100,
+        paddingLeft: 20,
+        paddingRight: 30
+        // marginVertical:10
+    },
+    container_cardapio:{
+        alignItems: 'flex-start',
+        flex: 1,
+        marginTop: 20,
+        borderTopColor: 'black',
+        borderTopWidth: 1
+    },
+    texto_cardapio: {
+        paddingLeft: 10,
+        color: 'gray'
+    },
+    preco:{
+        fontSize:16,
+        fontWeight:'bold',
+        color: 'gray',
+        marginTop:10
     }
   });
 

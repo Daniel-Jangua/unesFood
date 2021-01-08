@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Cardapio.belongsTo(models.Vendedor);
-      Cardapio.belongsTo(models.Carrinho);
+      //Cardapio.belongsTo(models.Carrinho);
     }
   };
   Cardapio.init({

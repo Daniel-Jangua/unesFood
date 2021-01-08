@@ -1,9 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Text, View, TouchableOpacity, TextInput,Alert, Image, SafeAreaView, ScrollView} from 'react-native';
 import {css} from '../assets/css/Css';
 
 export default function CadCli(props){
+
+    const [user,setUser] = useState(null);
+    const [senha,setSenha] = useState(null);
+    const [nome,setNome] = useState(null);
+    const [email,setEmail] = useState(null);
+    const [num,setNum] = useState(null);
+    const [cpf,setCpf] = useState(null);
+    const [dataNasc,setDataNasc] = useState(null);
+    const [response,setResponse] = useState(null);
+
+    //envio do formulário
+    async function sendForm(){
+        let response = await fetch('http://192.168.0.104:3000/cadCli',{
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: nome,
+                cpf: cpf,
+                num_celular: num,
+                data_nasc: dataNasc,
+                email: email,
+                login: user,
+                senha: senha,
+                nota_avaliacao: 5.0,
+                regiao: null,
+                ocupacao: null
+            })
+        });
+        let json = await response.json();
+        Alert.alert('Alerta',json);
+    }
+
     return(
         <SafeAreaView style={css.container2}>
         <ScrollView style={css.scrollView}>
@@ -16,22 +51,26 @@ export default function CadCli(props){
                 <TextInput
                     style={css.input}
                     placeholder='Nome de Usuário'
+                    onChangeText={text=>setUser(text)}
                 />
                 
                 <TextInput
                     style={css.input}
-                    placeholder='Email'
-                />
-
-                <TextInput
-                    style={css.input}
                     placeholder='Senha'
                     secureTextEntry={true}
+                    onChangeText={text=>setSenha(text)}
                 />
 
                 <TextInput
                     style={css.input}
                     placeholder='Nome Completo'
+                    onChangeText={text=>setNome(text)}
+                />
+
+                <TextInput
+                    style={css.input}
+                    placeholder='Email'
+                    onChangeText={text=>setEmail(text)}
                 />
 
                 <TextInput
@@ -39,6 +78,7 @@ export default function CadCli(props){
                     keyboardType='numeric'
                     maxLength={9}
                     placeholder='Número de Celular'
+                    onChangeText={text=>setNum(text)}
                 />
 
                 <TextInput
@@ -46,18 +86,20 @@ export default function CadCli(props){
                     keyboardType='numeric'
                     maxLength={11}
                     placeholder='CPF'
+                    onChangeText={text=>setCpf(text)}
                 />
 
                 <TextInput
                     style={css.input}
                     keyboardType='numeric'
-                    maxLength={8}
-                    placeholder='Data de nascimento (ex: 05101999)'
+                    maxLength={10}
+                    placeholder='Data de nascimento (ex: 05/10/1999)'
+                    onChangeText={text=>setDataNasc(text)}
                 />
 
                 <TouchableOpacity
                     style={css.botao}
-                    onPress={()=>{Alert.alert('Criando conta')}}
+                    onPress={()=>sendForm()}
                 >
                 <Text style={css.textoBotao}>Criar</Text>
                 </TouchableOpacity>

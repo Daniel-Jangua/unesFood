@@ -98,6 +98,35 @@ app.post('/buscaVend', async (req,res)=>{
         res.send(read);
 });
 
+app.post('/buscaCard', async (req,res)=>{
+    let read = await cardapio.findAll({
+        attributes: ['id', 'nome', 'vendedorId','tipo','valor','descricao'],
+        where: {vendedorId: req.body.id}
+    });
+    res.send(read);
+});
+
+app.post('/cadCli', async (req,res)=>{
+    let create = await cliente.create({
+        nome: req.body.nome,
+        cpf: req.body.cpf,
+        num_celular: req.body.num_celular,
+        data_nasc: req.body.data_nasc,
+        email: req.body.email,
+        login: req.body.login,
+        senha: req.body.senha,
+        nota_avaliacao: req.body.nota_avaliacao,
+        regiao: req.body.regiao,
+        ocupacao: req.body.ocupacao,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    });
+    if(create == null)
+        res.send(JSON.stringify('Falha ao cadastrar cliente, confira os dados.'));
+    else
+        res.send(JSON.stringify('Cliente cadastrado com sucesso!'));
+});
+
 let port=process.env.PORT || 3000;
 app.listen(port, (req,res)=>{
     console.log('Servidor Rodando');
