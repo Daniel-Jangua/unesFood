@@ -17,6 +17,11 @@ export default function CadCli(props){
                     style={css.input}
                     placeholder='Nome de Usuário'
                 />
+                
+                <TextInput
+                    style={css.input}
+                    placeholder='Email'
+                />
 
                 <TextInput
                     style={css.input}
@@ -35,35 +40,21 @@ export default function CadCli(props){
                     maxLength={9}
                     placeholder='Número de Celular'
                 />
-            
-                 <TextInput
+
+                <TextInput
                     style={css.input}
                     keyboardType='numeric'
-                    maxLength={9}
-                    placeholder='RA'
+                    maxLength={11}
+                    placeholder='CPF'
                 />
 
                 <TextInput
                     style={css.input}
                     keyboardType='numeric'
-                    maxLength={9}
-                    placeholder='RA'
+                    maxLength={8}
+                    placeholder='Data de nascimento (ex: 05101999)'
                 />
 
-                <TextInput
-                    style={css.input}
-                    keyboardType='numeric'
-                    maxLength={9}
-                    placeholder='RA'
-                />
-
-                <TextInput
-                    style={css.input}
-                    keyboardType='numeric'
-                    maxLength={9}
-                    placeholder='RA'
-                />
-                
                 <TouchableOpacity
                     style={css.botao}
                     onPress={()=>{Alert.alert('Criando conta')}}
