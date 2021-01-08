@@ -5,7 +5,8 @@ import Page from './views/Page';
 import {css} from './assets/css/Css';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio} from './views';
+import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, Perfil, Pedidos, Carrinho} from './views';
+
 
 export default function App() {
 
@@ -83,6 +84,26 @@ export default function App() {
           component={Pesquisa} 
           options={{
             title: 'Pesquisa'
+        }}/>
+        <Stack.Screen name="Carrinho" 
+          component={Carrinho} 
+          options={{
+            title: 'Carrinho'
+        }}/>
+        <Stack.Screen name="Perfil" 
+          component={Perfil} 
+          options={{
+            title: 'Perfil'
+        }}/>
+        <Stack.Screen name="Pedidos" 
+          component={Pedidos} 
+          options={{
+            title: 'Pedidos'
+        }}/>
+        <Stack.Screen name="Cardapio" 
+          component={Cardapio} 
+          options={{
+            title: 'Cardapio'
         }}/>
       </Stack.Navigator>
       <StatusBar style="auto" />
