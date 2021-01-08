@@ -78,7 +78,8 @@ export default function App() {
         <Stack.Screen name="Inicio" 
           component={Inicio} 
           options={{
-            title: 'Início'
+            title: 'Início',
+            headerLeft:null
         }}/>
         <Stack.Screen name="Pesquisa" 
           component={Pesquisa} 
