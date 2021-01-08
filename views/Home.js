@@ -5,7 +5,7 @@ import { Text, View, TouchableOpacity, Image } from 'react-native';
 import {css} from '../assets/css/Css';
 
 export default function Home(props){
-    console.log(props);
+    //console.log(props);
     return(
         <View style={css.container}>
             

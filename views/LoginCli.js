@@ -1,9 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View, TouchableOpacity, TextInput,Alert, Image } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { Text, View, TouchableOpacity, TextInput,Alert, Image} from 'react-native';
 import {css} from '../assets/css/Css';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginCli(props){
+    
+    const [user, setUser]=useState(null);
+    const [senha, setSenha]=useState(null);
+    const [login, setLogin]=useState(null);
+
+    //Envio do formulário de login
+    async function sendForm(){
+        let response = await fetch('http://192.168.0.104:3000/loginCli', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                login: user,
+                senha: senha
+            })
+        });
+        let json = await response.json();
+        if(json === 'error'){
+            Alert.alert('Erro','Usuário ou senha inválidos!');
+            await AsyncStorage.clear();
+        }else{
+            let userData = await AsyncStorage.setItem('userData', JSON.stringify(json));
+        }
+    }
+    
     return(
         <View style={css.container}>
 
@@ -15,18 +43,20 @@ export default function LoginCli(props){
                 <TextInput
                     style={css.input}
                     placeholder='Nome de Usuário'
+                    onChangeText={text=>setUser(text)}
                 />
 
                 <TextInput
                     style={css.input}
                     placeholder='Senha'
                     secureTextEntry={true}
+                    onChangeText={text=>setSenha(text)}
                 />
 
                 <TouchableOpacity
                     style={css.botao}
-                   // onPress={()=>{Alert.alert('Fazendo Login')}}
-                   onPress={()=>props.navigation.navigate('Inicio')}
+                   //onPress={()=>props.navigation.navigate('Inicio')}
+                   onPress={()=>sendForm()}
                 >
                     <Text style={css.textoBotao}>Entrar</Text>
                 </TouchableOpacity>
