@@ -88,7 +88,6 @@ const css = StyleSheet.create({
     container_fora: {
         //  flex: 1,
         backgroundColor: '#fff',
-        marginBottom:10
         //alignContent:'flex-start',
         
     },
@@ -122,8 +121,7 @@ const css = StyleSheet.create({
     },
     text_produto: {
         fontSize: 16,
-        fontWeight:'bold',
-        paddingLeft:10,        
+        fontWeight:'bold',      
         paddingRight:100,        
         //marginLeft: 10
     },
@@ -155,13 +153,10 @@ const css = StyleSheet.create({
     fora_scroll: {
         fontSize: 16,
         fontWeight:'bold',
-        marginLeft: 10,
-        marginBottom: 10,
+        marginLeft: 5,
     },
     menu:{
         flexDirection:'row',
-        marginTop: 5,
-        marginLeft:5,
         marginBottom:20,
         backgroundColor:'#fff'
     },
