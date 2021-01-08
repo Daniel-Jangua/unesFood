@@ -8,6 +8,8 @@ export default function Pesquisa(props){
 
     const [searchQuery, setSearchQuery] = React.useState('');
     const [lista, setLista] = useState(null);
+    const [selectedId, setSelectedId] = useState(null);
+
       
     const onChangeSearch = query => setSearchQuery(query);
 
@@ -33,7 +35,10 @@ export default function Pesquisa(props){
         //console.log(json);
     }
 
-    //sendBusca();
+    function formatedNumber(num, casas){
+        return num.toFixed(casas);
+    }
+ 
 
     return(
         <View style={{flex:1}}>
@@ -50,15 +55,27 @@ export default function Pesquisa(props){
         <FlatList
             //style={{flex:1}}
             data={lista}
-            keyExtractor={item => item.nome.toString()}
+            keyExtractor={item => item.id.toString()}
             renderItem={({item})=>(
-                <View style={css.container_item_lista}>
-                    <Image
-                        source={require('../assets/img/perfil-pic.png')}   
-                        style={css.foto_item_lista} 
-                    />
-                    <Text style={css.texto_item_lista}>{item.nome}</Text>
-                </View>
+                <TouchableOpacity
+                    onPress={()=>props.navigation.navigate('CardapioCli',item)}
+                >
+                    <View style={css.container_item_lista}>
+                        <Image
+                            source={require('../assets/img/perfil-pic.png')}   
+                            style={css.foto_item_lista} 
+                        />
+                        <View style={{flexDirection:'column'}}>
+                            <Text style={css.texto_item_lista}>{item.nome}</Text>
+                            <Text style={css.dados_item_lista}>Online</Text>
+                        </View>
+                        <Text style={{marginTop:15,fontSize:16}}>{formatedNumber(item.nota_avaliacao,1)}</Text>
+                        <Image
+                            source={require('../assets/img/star.png')}   
+                            style={css.icone_avaliacao} 
+                        />
+                    </View>
+                </TouchableOpacity>
             )}
             
         />

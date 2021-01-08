@@ -151,7 +151,7 @@ const css = StyleSheet.create({
         marginTop: 10,
         paddingVertical: 20,
         paddingHorizontal: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#CFEFFF',
         flexDirection: 'row'
     },
     foto_item_lista:{
@@ -161,8 +161,21 @@ const css = StyleSheet.create({
     },
     texto_item_lista:{
         fontSize: 16,
-        width: 200,
-        padding: 10
+        width: 160,
+        padding: 10,
+        color: '#7A7A76',
+        fontWeight: 'bold'
+    },
+    icone_avaliacao:{
+        width: 25,
+        height: 25,
+        //borderRadius: 100,
+        marginTop: 10,
+        marginLeft:10
+    },
+    dados_item_lista:{
+        paddingLeft: 10,
+        color: 'green'
     }
   });
 

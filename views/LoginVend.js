@@ -29,7 +29,7 @@ export default function LoginVend(props){
             await AsyncStorage.clear();
         }else{
             let userData = await AsyncStorage.setItem('userData', JSON.stringify(json));
-            //props.navigation.navigate('Inicio');
+            props.navigation.navigate('InicioVend');
         }
     }
 

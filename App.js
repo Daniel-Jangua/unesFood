@@ -5,7 +5,7 @@ import Page from './views/Page';
 import {css} from './assets/css/Css';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, Perfil, Pedidos, Carrinho, Cardapio} from './views';
+import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, InicioVend, Perfil, Pedidos, Carrinho, Cardapio, CardapioCli} from './views';
 
 
 export default function App() {
@@ -46,7 +46,7 @@ export default function App() {
           headerTitleAlign: 'center'
       }}>
         <Stack.Screen 
-          name="Início" 
+          name="Home" 
           component={Home} 
           options = {{
             title: 'Bem Vindo!'
@@ -81,6 +81,12 @@ export default function App() {
             title: 'Início',
             headerLeft:null
         }}/>
+        <Stack.Screen name="InicioVend" 
+          component={InicioVend} 
+          options={{
+            title: 'Início',
+            headerLeft:null
+        }}/>
         <Stack.Screen name="Pesquisa" 
           component={Pesquisa} 
           options={{
@@ -105,6 +111,11 @@ export default function App() {
           component={Cardapio} 
           options={{
             title: 'Cardapio'
+        }}/>
+        <Stack.Screen name="CardapioCli" 
+          component={CardapioCli} 
+          options={{
+            title: 'Cardápio'
         }}/>
       </Stack.Navigator>
       <StatusBar style="auto" />

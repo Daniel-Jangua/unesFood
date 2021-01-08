@@ -5,7 +5,30 @@ import {css} from '../assets/css/Css';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 export default function Perfil(props){
+    
+    //logout
+    function logout(){
+        Alert.alert("Alerta", "Tem certeza que deseja sair?", [
+            {
+              text: "Não",
+              onPress: () => null,
+              style: "cancel"
+            },
+            { text: "Sim", onPress: () => {
+              props.navigation.navigate('Home');
+            } }
+          ]);
+    }
+    
     return(
-        <Text>Perfil</Text>
+        <View style={css.container}>
+            <Text>Perfil</Text>
+            <TouchableOpacity 
+                style={css.botao}
+                onPress={()=>logout()}
+            >
+                <Text>Sair</Text>
+            </TouchableOpacity>
+        </View>
     );
 }
