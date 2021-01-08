@@ -5,7 +5,7 @@ import Page from './views/Page';
 import {css} from './assets/css/Css';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, Perfil, Pedidos, Carrinho} from './views';
+import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, Perfil, Pedidos, Carrinho, Cardapio} from './views';
 
 
 export default function App() {
