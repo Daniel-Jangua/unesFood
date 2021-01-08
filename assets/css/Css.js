@@ -12,7 +12,7 @@ const css = StyleSheet.create({
         padding: 20
     },
     botao: {
-        marginTop: 10,
+        marginVertical: 20,
         width:300,
         height:42,
         backgroundColor: '#66bbff',
@@ -29,7 +29,7 @@ const css = StyleSheet.create({
         width: 150,
         height: 150,
         borderRadius: 100,
-        marginBottom:10
+        marginVertical:10
     },
     input: {
         padding: 10,
