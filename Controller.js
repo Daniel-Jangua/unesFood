@@ -127,6 +127,27 @@ app.post('/cadCli', async (req,res)=>{
         res.send(JSON.stringify('Cliente cadastrado com sucesso!'));
 });
 
+app.post('/cadVend', async (req,res)=>{
+    let create = await vendedor.create({
+        nome: req.body.nome,
+        cpf: req.body.cpf,
+        num_celular: req.body.num_celular,
+        data_nasc: req.body.data_nasc,
+        email: req.body.email,
+        login: req.body.login,
+        senha: req.body.senha,
+        nota_avaliacao: req.body.nota_avaliacao,
+        ra: req.body.ra,
+        status: 0,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    });
+    if(create == null)
+        res.send(JSON.stringify('Falha ao cadastrar vendedor, confira os dados.'));
+    else
+        res.send(JSON.stringify('Vendedor cadastrado com sucesso!'));
+});
+
 let port=process.env.PORT || 3000;
 app.listen(port, (req,res)=>{
     console.log('Servidor Rodando');

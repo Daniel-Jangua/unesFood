@@ -37,6 +37,7 @@ export default function CadCli(props){
         });
         let json = await response.json();
         Alert.alert('Alerta',json);
+        props.navigation.goBack(null);
     }
 
     return(

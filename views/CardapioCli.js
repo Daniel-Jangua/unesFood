@@ -21,7 +21,7 @@ export default function CardapioCli(props){
         });
         let json = await response.json();
         setLista(json);
-        console.log(json);
+        //console.log(json);
     }
 
     useEffect(() => {
