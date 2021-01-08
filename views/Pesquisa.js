@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState,useEffect} from 'react';
-import { Text, View, TouchableOpacity, TextInput,Alert, Image, FlatList, ScrollView} from 'react-native';
+import { Text, View, TouchableOpacity, TextInput,Alert, Image, FlatList, SafeAreaView} from 'react-native';
 import {css} from '../assets/css/Css';
 import { Searchbar } from 'react-native-paper';
 
@@ -36,7 +36,7 @@ export default function Pesquisa(props){
     //sendBusca();
 
     return(
-        <View>
+        <View style={{flex:1}}>
         <Searchbar
             placeholder="Pesquisar"
             onChangeText={onChangeSearch}
@@ -46,8 +46,9 @@ export default function Pesquisa(props){
         <Text style={css.sugestion}>
             Vendedores
         </Text>
-
+        <View style={{flex:1}}>
         <FlatList
+            //style={{flex:1}}
             data={lista}
             keyExtractor={item => item.nome.toString()}
             renderItem={({item})=>(
@@ -61,6 +62,7 @@ export default function Pesquisa(props){
             )}
             
         />
+        </View>
 
         </View>
     );
