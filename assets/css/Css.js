@@ -243,6 +243,47 @@ const css = StyleSheet.create({
         fontWeight:'bold',
         color: 'gray',
         marginTop:10
+    },
+    container2Perfil: {
+        marginTop:20,
+        
+        flex: 1,
+        alignContent:'flex-start',
+        flexDirection: "column",
+        borderTopColor: 'black',
+        borderTopWidth: 1,
+        borderBottomColor: 'black',
+        borderBottomWidth: 1
+    },
+    container_botoes_perfil:{
+        flexDirection:'row',
+        alignContent: 'center'
+    },
+    botao_perfil: {
+        //marginTop: 5,
+        //marginLeft: 20,
+        marginVertical: 10,
+        marginHorizontal: 10,
+        // paddingHorizontal: 10,
+        width: 150,
+        height: 42,
+        backgroundColor: '#66bbff',
+        borderRadius: 4,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    cont_dados_perfil: {
+        flex: 1,
+        justifyContent: "space-between",
+        backgroundColor: "#CFEFFF",
+        // padding: 20,
+        margin: 10,
+      },
+    text_dado_perfil: {
+        fontSize: 16,
+        fontWeight:'bold',
+        // paddingHorizontal:10,
+        //marginLeft: 10
     }
   });
 

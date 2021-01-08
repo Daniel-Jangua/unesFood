@@ -29,6 +29,9 @@ export default function LoginCli(props){
             await AsyncStorage.clear();
         }else{
             let userData = await AsyncStorage.setItem('userData', JSON.stringify(json));
+            //let out = await AsyncStorage.getItem('userData');
+            //let json = JSON.parse(out);
+            //console.log(out);
             props.navigation.navigate('Inicio');
         }
     }
