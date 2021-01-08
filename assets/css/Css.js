@@ -53,6 +53,26 @@ const css = StyleSheet.create({
         marginTop: 10,
         borderTopColor: 'black',
         borderTopWidth: 1
+    },
+    container2: {
+        flex: 1,
+       // marginTop: Constants.statusBarHeight,
+    },
+    scrollView: {
+        backgroundColor: 'pink',
+    },
+    text: {
+        fontSize: 42,
+        padding: 20
+    },
+    sugestion: {
+        fontSize: 36,
+        fontWeight: 'bold',
+        color:'#66bbff',
+        textAlign: 'center',
+        borderBottomWidth: 2,
+        borderBottomColor: '#CFEFFF',
+        padding: 20
     }
   });
 
