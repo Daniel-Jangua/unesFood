@@ -146,6 +146,23 @@ const css = StyleSheet.create({
         height:42,
         // backgroundColor: '#66bbff',
         borderRadius: 4,
+    },
+    container_item_lista:{
+        marginTop: 10,
+        paddingVertical: 20,
+        paddingHorizontal: 20,
+        backgroundColor: '#fff',
+        flexDirection: 'row'
+    },
+    foto_item_lista:{
+        width: 80,
+        height: 80,
+        borderRadius: 100
+    },
+    texto_item_lista:{
+        fontSize: 16,
+        width: 200,
+        padding: 10
     }
   });
 

@@ -78,7 +78,7 @@ export default function App() {
         <Stack.Screen name="Inicio" 
           component={Inicio} 
           options={{
-            title: 'Inicio'
+            title: 'Início'
         }}/>
         <Stack.Screen name="Pesquisa" 
           component={Pesquisa} 

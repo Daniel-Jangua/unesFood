@@ -4,6 +4,7 @@ const bodyParser=require('body-parser');
 const models=require('./models');
 const { useReducer } = require('react');
 const { response } = require('express');
+const { Op } = require("sequelize");
 
 const app=express();
 app.use(cors());
@@ -75,6 +76,26 @@ app.post('/loginVend', async (req,res)=>{
     }else{
         res.send(response);
     }
+});
+
+app.post('/buscaVend', async (req,res)=>{
+    let read = null;
+    if(req.body.nome != ''){
+        read = await vendedor.findAll({
+            //raw: true,
+            where: {nome:{
+                [Op.like]: '%'+ req.body.nome +'%'
+            }}
+        });
+    }else{
+        read = await vendedor.findAll({
+            //raw: true
+        });
+    }
+    if(read == null)
+        res.send(JSON.stringify('nenhum'));
+    else
+        res.send(read);
 });
 
 let port=process.env.PORT || 3000;
