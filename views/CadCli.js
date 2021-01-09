@@ -16,7 +16,7 @@ export default function CadCli(props){
 
     //envio do formulário
     async function sendForm(){
-        let response = await fetch('http://192.168.0.104:3000/cadCli',{
+        let response = await fetch('http://192.168.0.103:3000/cadCli',{
             method: 'POST',
             headers: {
               Accept: 'application/json',

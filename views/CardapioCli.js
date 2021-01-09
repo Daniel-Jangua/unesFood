@@ -9,7 +9,7 @@ export default function CardapioCli(props){
 
     //Realizar a busca
     async function sendBusca(){
-        let response = await fetch('http://192.168.0.104:3000/buscaCard', {
+        let response = await fetch('http://192.168.0.103:3000/buscaCard', {
             method: 'POST',
             headers: {
               Accept: 'application/json',

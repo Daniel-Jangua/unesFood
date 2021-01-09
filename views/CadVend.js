@@ -16,7 +16,7 @@ export default function CadVend(props){
 
     //envio do formulário
     async function sendForm(){
-        let response = await fetch('http://192.168.0.104:3000/cadVend',{
+        let response = await fetch('http://192.168.0.103:3000/cadVend',{
             method: 'POST',
             headers: {
               Accept: 'application/json',

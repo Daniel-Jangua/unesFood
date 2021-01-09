@@ -5,7 +5,7 @@ import Page from './views/Page';
 import {css} from './assets/css/Css';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, InicioVend, Perfil, Pedidos, Carrinho, Cardapio, CardapioCli} from './views';
+import {Home, LoginCli, LoginVend, CadCli, CadVend, Pesquisa, Inicio, InicioVend, Perfil, Pedidos, Carrinho, Cardapio, CardapioCli, CadItem} from './views';
 
 
 export default function App() {
@@ -116,6 +116,11 @@ export default function App() {
           component={CardapioCli} 
           options={{
             title: 'Cardápio'
+        }}/>
+        <Stack.Screen name="CadItem" 
+          component={CadItem} 
+          options={{
+            title: 'Adicionar Item'
         }}/>
       </Stack.Navigator>
       <StatusBar style="auto" />

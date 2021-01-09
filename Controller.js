@@ -106,6 +106,15 @@ app.post('/buscaCard', async (req,res)=>{
     res.send(read);
 });
 
+app.post('/deleteCard', async (req,res)=>{
+    let read = await cardapio.destroy({
+        where: {
+            id: req.body.id
+        }
+    });
+    res.send(JSON.stringify(read));
+});
+
 app.post('/cadCli', async (req,res)=>{
     let create = await cliente.create({
         nome: req.body.nome,
@@ -146,6 +155,24 @@ app.post('/cadVend', async (req,res)=>{
         res.send(JSON.stringify('Falha ao cadastrar vendedor, confira os dados.'));
     else
         res.send(JSON.stringify('Vendedor cadastrado com sucesso!'));
+});
+
+app.post('/cadItem', async (req,res)=>{
+    let create = await cardapio.create({
+        vendedorId: req.body.vendedorId,
+        cod_cardapio: req.body.cod_cardapio,
+        tipo: req.body.tipo,
+        valor: req.body.valor,
+        foto: null,
+        descricao: req.body.descricao,
+        nome: req.body.nome,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    });
+    if(create == null)
+        res.send(JSON.stringify('Falha ao cadastrar item, confira os dados.'));
+    else
+        res.send(JSON.stringify('Item cadastrado com sucesso!'));
 });
 
 let port=process.env.PORT || 3000;

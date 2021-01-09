@@ -11,5 +11,6 @@ import Pedidos from './Pedidos';
 import Cardapio from './Cardapio';
 import InicioVend from './InicioVend';
 import CardapioCli from './CardapioCli';
+import CadItem from './CadItem';
 
-export {Home, LoginCli, LoginVend, CadCli, CadVend, Inicio, InicioVend, Pesquisa, Carrinho, Perfil, Pedidos, Cardapio, CardapioCli}
+export {Home, LoginCli, LoginVend, CadCli, CadVend, Inicio, InicioVend, Pesquisa, Carrinho, Perfil, Pedidos, Cardapio, CardapioCli, CadItem}

@@ -12,7 +12,7 @@ export default function LoginVend(props){
 
     //Envio do formulário de login
     async function sendForm(){
-        let response = await fetch('http://192.168.0.104:3000/loginVend', {
+        let response = await fetch('http://192.168.0.103:3000/loginVend', {
             method: 'POST',
             headers: {
               Accept: 'application/json',

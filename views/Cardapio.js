@@ -19,7 +19,7 @@ export default function Cardapio(props){
 
     //Realizar a busca
     async function sendBusca(){
-        let response = await fetch('http://192.168.0.104:3000/buscaCard', {
+        let response = await fetch('http://192.168.0.103:3000/buscaCard', {
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -35,6 +35,22 @@ export default function Cardapio(props){
         //console.log(json);
     }
 
+    //Excluir item
+    async function sendDelete(item){
+        let response = await fetch('http://192.168.0.103:3000/deleteCard', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: item.id
+            })
+        });
+        Alert.alert('Alerta','Item excluído com sucesso!');
+        sendBusca();
+    }
+
     useEffect(() => {
         async function getUser(){
             let response = await AsyncStorage.getItem('userData');
@@ -47,6 +63,27 @@ export default function Cardapio(props){
     useEffect(() => {
         sendBusca();
     }, [user]);
+
+    function selectItem(item){
+        Alert.alert(
+            "Opções",
+            "O que deseja fazer?",
+            [
+              {
+                text: "Cancelar",
+                onPress: () => null,
+                style: "cancel"
+              },
+              { 
+                text: "Editar", onPress: () => null 
+              },
+              {
+                text: 'Excluir', onPress: ()=> sendDelete(item)
+              }
+            ],
+            { cancelable: false }
+        );
+    }
 
     return( 
         <View style={css.container}>
@@ -66,7 +103,7 @@ export default function Cardapio(props){
                     keyExtractor={item => item.id.toString()}
                     renderItem={({item})=>(
                         <TouchableOpacity
-                            //onPress={()=>props.navigation.navigate('CardapioCli',item)}
+                            onPress={()=>selectItem(item)}
                         >
                             <View style={css.container_item_lista}>
                                 <Image
@@ -90,14 +127,16 @@ export default function Cardapio(props){
             <View style ={css.cardapioContainerBotoes}>
                 <TouchableOpacity
                     style={css.cardapioBotao}
+                    onPress={()=>props.navigation.navigate('CadItem')}
                 >
                     <Text style={css.textoBotao}>Inserir</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={css.cardapioBotao}
+                    onPress={()=>sendBusca()}
                 >
-                    <Text style={css.textoBotao}>Excluir</Text>
+                    <Text style={css.textoBotao}>Atualizar</Text>
                 </TouchableOpacity>
             </View>
         </View>

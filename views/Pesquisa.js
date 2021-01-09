@@ -20,7 +20,7 @@ export default function Pesquisa(props){
     //Realizar a busca
     async function sendBusca(){
         onChangeSearch;
-        let response = await fetch('http://192.168.0.104:3000/buscaVend', {
+        let response = await fetch('http://192.168.0.103:3000/buscaVend', {
             method: 'POST',
             headers: {
               Accept: 'application/json',
