@@ -95,7 +95,7 @@ export default function Perfil(props){
             <View style={css.container_botoes_perfil}>
                 <TouchableOpacity 
                     style={css.botao_perfil}
-                    
+                    onPress={()=>{Alert.alert('Alerta','Ainda não foi implementado.')}}
                 >
                     <Text style={css.textoBotao}>Editar</Text>
                 </TouchableOpacity>
