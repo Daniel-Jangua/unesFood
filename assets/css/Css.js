@@ -310,6 +310,24 @@ const css = StyleSheet.create({
     cardapioContainerLista:{
         flex: 2,
         alignContent:'center',
+    },
+    pedidosBotao: {
+        marginVertical: 20,
+        width:70,
+        height:42,
+        backgroundColor: '#66bbff',
+        borderRadius: 4,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    pedidosPedido:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        color:'grey',
+        textAlign: 'center',
+        borderBottomWidth: 2,
+        borderBottomColor: '#CFEFFF',
+        padding: 2
     }
   });
 
